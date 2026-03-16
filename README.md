@@ -1,6 +1,6 @@
 # ⏱ Codebase Time Machine
 
-> See how your code evolved. Understand *why* it changed.
+See how your code evolved. Understand *why* it changed.
 
 Connect any Git repo and watch your codebase's history come alive — with AI-powered explanations for every commit, a visual timeline, and function-level evolution tracking.
 Preview Img: ![alt text](<assets/preview 1.png>) ![alt text](<assets/preview 2.png>)
@@ -8,38 +8,12 @@ Preview Img: ![alt text](<assets/preview 1.png>) ![alt text](<assets/preview 2.p
 
 ## Features
 
-- **Visual Timeline** — Scrollable commit history with type-color-coded nodes (feature/fix/refactor/etc.)
-- **Function Evolution** — Track a single function across every commit that touched it
-- **Monaco Diff Viewer** — Side-by-side diffs with full syntax highlighting
-- **AI Commit Explanation** — GPT-4o-mini explains *what* changed, *why*, and the risk level
-- **Bug Origin Detector** — Git blame + AI to find where a bug was introduced
+1. Visual Timeline** — Scrollable commit history with type-color-coded nodes (feature/fix/refactor/etc.)
+2. Function Evolution** — Track a single function across every commit that touched it
+3. Monaco Diff Viewer** — Side-by-side diffs with full syntax highlighting
+4. AI Commit Explanation** — GPT-4o-mini explains *what* changed, *why*, and the risk level
+4. Bug Origin Detector** — Git blame + AI to find where a bug was introduced
 
----
-
-## Quick Start
-
-```bash
-# 1. Clone this repo
-git clone <this-repo>
-cd codebase-time-machine
-
-# 2. Run setup (installs Node + Python deps, creates .env)
-bash scripts/setup.sh
-
-# 3. Add your OpenAI key to .env
-echo "OPENAI_API_KEY=sk-..." >> .env
-
-# 4. Start the Node API (terminal 1)
-npm run dev
-
-# 5. Start the AI service (terminal 2)
-python3 ai-engine/explain_changes.py
-
-# 6. Open the frontend
-open frontend/index.html
-```
-
----
 
 ## Project Structure
 
@@ -90,45 +64,10 @@ codebase-time-machine/
 ├── package.json
 └── requirements.txt
 ```
-
----
-
-## API Reference
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/repo/connect` | Connect to a Git repo |
-| GET | `/api/repo/:id` | Get repo metadata |
-| GET | `/api/repo/:id/files` | List all files |
-| GET | `/api/commits/:id` | List commits |
-| GET | `/api/commits/:id/:hash` | Commit detail |
-| GET | `/api/commits/:id/:hash/diff` | Commit diff |
-| GET | `/api/history/:id/timeline` | Full timeline data |
-| GET | `/api/history/:id/function` | Function evolution |
-| POST | `/api/analyze/commit` | Start AI analysis |
-| GET | `/api/analyze/status/:jobId` | Poll analysis status |
-
----
-
-## Environment Variables
-
-```env
-PORT=3000
-AI_SERVICE_URL=http://localhost:5001
-OPENAI_API_KEY=your_key_here
-REPOS_DIR=./data/repos
-RESULTS_DIR=./data/analysis_results
-```
-
----
-
 ## Tech Stack
 
-- **Frontend**: Vanilla JS (ES modules), Monaco Editor, custom CSS
-- **Backend**: Node.js, Express, simple-git, @babel/parser
-- **AI Engine**: Python, Flask, OpenAI GPT-4o-mini, GitPython
-- **Git Analysis**: simple-git, custom AST traversal
+1. Frontend**: Vanilla JS (ES modules), Monaco Editor, custom CSS
+2. Backend**: Node.js, Express, simple-git, @babel/parser
+3. AI Engine**: Python, Flask, OpenAI GPT-4o-mini, GitPython
+4. Git Analysis**: simple-git, custom AST traversal
 
----
-
-Built with ⏱ by your team.
