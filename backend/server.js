@@ -10,6 +10,9 @@ const analyzeRoutes = require("./routes/analyze");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("Server running");
+});
 
 // Middleware
 app.use(cors());
