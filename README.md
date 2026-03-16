@@ -3,7 +3,7 @@
 > See how your code evolved. Understand *why* it changed.
 
 Connect any Git repo and watch your codebase's history come alive — with AI-powered explanations for every commit, a visual timeline, and function-level evolution tracking.
-
+Preview Img: ![alt text](<assets/preview 1.png>) ![alt text](<assets/preview 2.png>)
 ---
 
 ## Features
