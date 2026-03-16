@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codebase Time Machine</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Monaco Editor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+  <div id="app">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="logo">
+        <span class="logo-icon">⏱</span>
+        <span class="logo-text">Time Machine</span>
+      </div>
+
+      <!-- Repo connect -->
+      <div class="sidebar-section" id="repo-section">
+        <label class="section-label">Repository</label>
+        <div class="repo-input-group">
+          <input type="text" id="repo-url-input" placeholder="GitHub URL or local path" />
+          <button id="connect-btn" class="btn btn-primary">Connect</button>
+        </div>
+        <div id="repo-status" class="repo-status hidden"></div>
+      </div>
+
+      <!-- File tree -->
+      <div class="sidebar-section" id="files-section">
+        <label class="section-label">Files</label>
+        <div id="file-tree" class="file-tree">
+          <div class="empty-state">Connect a repo to browse files</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main">
+
+      <!-- Top bar -->
+      <header id="topbar">
+        <nav class="tab-nav">
+          <button class="tab-btn active" data-tab="timeline">Timeline</button>
+          <button class="tab-btn" data-tab="evolution">Function Evolution</button>
+          <button class="tab-btn" data-tab="diff">Diff Viewer</button>
+          <button class="tab-btn" data-tab="ai">AI Explain</button>
+        </nav>
+        <div id="commit-info" class="commit-info hidden">
+          <span id="commit-hash" class="commit-hash"></span>
+          <span id="commit-msg" class="commit-msg"></span>
+        </div>
+      </header>
+
+      <!-- Tab panels -->
+      <div id="tab-panels">
+
+        <!-- Timeline -->
+        <div id="tab-timeline" class="tab-panel active">
+          <div id="timeline-container">
+            <div class="empty-state large">
+              <div class="empty-icon">⏱</div>
+              <div>Connect a repository to see its timeline</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Function Evolution -->
+        <div id="tab-evolution" class="tab-panel">
+          <div class="evolution-controls">
+            <input type="text" id="fn-file-input" placeholder="File path (e.g. src/auth.js)" />
+            <input type="text" id="fn-name-input" placeholder="Function name (e.g. validateUser)" />
+            <button id="track-fn-btn" class="btn btn-primary">Track Function</button>
+          </div>
+          <div id="evolution-container">
+            <div class="empty-state">Enter a file path and function name to track its evolution</div>
+          </div>
+        </div>
+
+        <!-- Diff Viewer -->
+        <div id="tab-diff" class="tab-panel">
+          <div id="diff-header" class="diff-header hidden">
+            <div id="diff-file-list"></div>
+          </div>
+          <div id="monaco-diff-container"></div>
+        </div>
+
+        <!-- AI Explain -->
+        <div id="tab-ai" class="tab-panel">
+          <div id="ai-container">
+            <div class="empty-state large">
+              <div class="empty-icon">🤖</div>
+              <div>Select a commit on the timeline, then click "Explain with AI"</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Commit detail panel (right side) -->
+    <aside id="commit-panel" class="hidden">
+      <div class="panel-header">
+        <span>Commit Details</span>
+        <button id="close-panel-btn" class="close-btn">✕</button>
+      </div>
+      <div id="commit-detail-content"></div>
+      <div class="panel-actions">
+        <button id="explain-ai-btn" class="btn btn-primary">🤖 Explain with AI</button>
+        <button id="view-diff-btn" class="btn btn-secondary">View Diff</button>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
