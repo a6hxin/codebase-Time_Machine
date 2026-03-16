@@ -9,7 +9,7 @@
   --border: rgba(255,255,255,0.08);
   --text: #e2e8f0;
   --text2: #94a3b8;
-  --text3: #475569;
+  --text3: #bcc1c8;
   --accent: #00ffa3;
   --accent2: #38bdf8;
   --accent3: #fbbf24;
@@ -32,7 +32,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 #app { display: flex; height: 100vh; }
 
 /* ─── Sidebar ───────────────────────────────────────────────────── */
-
 #sidebar {
   width: var(--sidebar-w);
   min-width: var(--sidebar-w);
@@ -140,7 +139,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   background: none;
   border: none;
   color: var(--text3);
-  font-size: 12px;
+  font-size: 13px;
   font-family: var(--font-ui);
   padding: 6px 14px;
   border-radius: 6px;
