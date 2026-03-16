@@ -8,11 +8,11 @@ Preview Img: ![alt text](<assets/preview 1.png>) ![alt text](<assets/preview 2.p
 
 ## Features
 
-1. Visual Timeline** — Scrollable commit history with type-color-coded nodes (feature/fix/refactor/etc.)
-2. Function Evolution** — Track a single function across every commit that touched it
-3. Monaco Diff Viewer** — Side-by-side diffs with full syntax highlighting
-4. AI Commit Explanation** — GPT-4o-mini explains *what* changed, *why*, and the risk level
-4. Bug Origin Detector** — Git blame + AI to find where a bug was introduced
+1. Visual Timeline — Scrollable commit history with type-color-coded nodes (feature/fix/refactor/etc.)
+2. Function Evolution — Track a single function across every commit that touched it
+3. Monaco Diff Viewer — Side-by-side diffs with full syntax highlighting
+4. AI Commit Explanation — GPT-4o-mini explains what changed, why, and the risk level
+4. Bug Origin Detector — Git blame + AI to find where a bug was introduced
 
 
 ## Project Structure
@@ -66,8 +66,8 @@ codebase-time-machine/
 ```
 ## Tech Stack
 
-1. Frontend**: Vanilla JS (ES modules), Monaco Editor, custom CSS
-2. Backend**: Node.js, Express, simple-git, @babel/parser
-3. AI Engine**: Python, Flask, OpenAI GPT-4o-mini, GitPython
-4. Git Analysis**: simple-git, custom AST traversal
+1. Frontend: Vanilla JS (ES modules), Monaco Editor, custom CSS
+2. Backend: Node.js, Express, simple-git, @babel/parser
+3. AI Engine: Python, Flask, OpenAI GPT-4o-mini, GitPython
+4. Git Analysis: simple-git, custom AST traversal
 
